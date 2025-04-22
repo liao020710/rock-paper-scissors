@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>剪刀石頭布</title>
+    <link rel="stylesheet" href="styles/10-rock-paper-scissors.css">
+</head>
+
+<body>
+    <p class="title">剪刀石頭布</p>
+    <button onclick="
+             //宣告在函式外面 Global variables 
+             //變數要宣告在scope(if、fuction的{})外面才不會undefined
+            playGame('Rock');   //先執行playGame function
+        " class="move-button"><img src="images/rock-emoji.png" class="move-icon"></button>
+
+    <button onclick="
+            playGame('Paper');
+        " class="move-button"><img src="images/paper-emoji.png" class="move-icon"></button>
+
+    <button onclick="
+            playGame('Scissors');
+        " class="move-button"><img src="images/scissors-emoji.png" class="move-icon"></button>
+
+    <p class="js-result result"></p>
+    <p class="js-moves"></p>
+    <p class="js-score score"></p>
+
+    <button onclick="
+        score.wins = 0;
+        score.losses = 0;
+        score.ties = 0;
+        localStorage.removeItem('score');
+        updateScoreElement();
+        alert('分數已被重置');
+        " class="reset-score-button">重置分數</button>
+
+    <script src="scripts/10-rock-paper-scissors.js"></script>
+</body>
+
+</html>
